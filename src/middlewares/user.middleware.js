@@ -1,0 +1,5 @@
+
+const protect = ()=>{
+
+}
+export {protect};
