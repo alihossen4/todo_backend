@@ -25,6 +25,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         enum: ['admin', 'member'],
         default: 'member'
+    },
+    addminInviteTokn:{
+        type:Number,
+        default:null
     }
 },
     {timestamps: true}
