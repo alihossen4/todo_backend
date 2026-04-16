@@ -31,13 +31,13 @@ const registerUser = async(req, res)=>{
     })
     
     }
-    catch(err){
-       return res.status(400).json({message:"somethin went wrong"});
+    catch(error){
+       res.status(400).json({message:"server errir", error: error.message});
     }
 
 }
 const loginUser = async(req, res)=>{
-    
+    const {email, password} = req.body;
 }
 const getUserProfile = async(req, res)=>{
     
