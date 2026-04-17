@@ -1,13 +1,14 @@
 import express from "express"
 import dbConnect from "./src/db/index.js"
-import { CLIENT_URI, PORT } from "./src/constants.js"
+import { WHITELIST, PORT } from "./src/constants.js"
 import cors from 'cors';
 import authRoutes from "./src/routes/auth.route.js";
-const app = express()
+const app = express();
 app.use(
     cors({
-        origin: CLIENT_URI,
+        origin: WHITELIST,
         methods: ["GET", "POST","PUT","DELETE"],
+        credentials:true,
         allowedHeaders: ["Content-Type","Authorization"]
     })
 )
