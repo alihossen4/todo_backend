@@ -24,7 +24,7 @@ app.use(express.json())
 //     }
 // }
 dbConnect()
-app.use("api/auth",authRoutes);
 app.listen(PORT, (req, res)=>{
     console.log("backend server")
 })
+app.use("api/auth",authRoutes);
