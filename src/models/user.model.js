@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 
 const userSchema = new mongoose.Schema({
-    usename: {
+    username: {
         type: String,
         unique:true,
         required: true
@@ -26,7 +26,7 @@ const userSchema = new mongoose.Schema({
         enum: ['admin', 'member'],
         default: 'member'
     },
-    addminInviteTokn:{
+    adminInviteTokn:{
         type:Number,
         default:null
     }

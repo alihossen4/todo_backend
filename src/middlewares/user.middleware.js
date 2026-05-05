@@ -19,6 +19,11 @@ const protect = async(req,res, next)=>{
     }
 }
 const adminOnly = () =>{
-
+    if(adminInviteToken && adminInviteToken === ADMIN_INVITE_TOKEN){
+        role = "admin";
+    }
+    else{
+        res.status(403).json({message: "Access denied, admin only"});
+    }
 }
 export {protect};

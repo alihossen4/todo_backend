@@ -6,12 +6,12 @@ import authRoutes from "./src/routes/auth.route.js";
 const app = express();
 app.use(
     cors({
-        origin: WHITELIST,
+        origin: WHITELIST || "*",
         methods: ["GET", "POST","PUT","DELETE"],
-        credentials:true,
         allowedHeaders: ["Content-Type","Authorization"]
     })
 )
+dbConnect();
 app.use(express.json())
 // const serverStart = async(req,res) =>{
 //     try {
@@ -23,8 +23,8 @@ app.use(express.json())
 //         // res.status(401).json({error: error.message})
 //     }
 // }
-dbConnect()
+app.use("/api/auth",authRoutes);
+
 app.listen(PORT, (req, res)=>{
     console.log("backend server")
 })
-app.use("api/auth",authRoutes);

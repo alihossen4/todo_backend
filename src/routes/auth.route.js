@@ -4,7 +4,7 @@ import {protect} from "../middlewares/user.middleware.js";
 const router = e.Router()
 
 router.post('/register', registerUser)
-router.post('/login', loginUser)
+router.get('/login', loginUser)
 router.get('/profile',protect, getUserProfile)
 router.put('/profiile',protect, updateUserProfile)
 

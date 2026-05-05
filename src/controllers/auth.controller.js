@@ -23,13 +23,13 @@ const registerUser = async(req, res)=>{
         profileImage
     })
     res.status(200).json({
+        _id: user._id,
         username:user.username,
         email: user.email,
         password: user.password,
         role: user.role,
         profileImage: user.profileImage
-    })
-    
+    });
     }
     catch(error){
        res.status(400).json({message:"server errir", error: error.message});
